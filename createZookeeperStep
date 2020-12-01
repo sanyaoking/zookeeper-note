@@ -1,0 +1,18 @@
+1.git clone zookeeper分支
+2.导入idea
+3.切换到3.5.8分支
+4.单独编译org.apache.zookeeper.version.util.VerGen,并运行方法，生成Info.java
+package org.apache.zookeeper.version;
+
+public interface Info {
+    int MAJOR=3;
+    int MINOR=5;
+    int MICRO=8;
+    String QUALIFIER=null;
+    int REVISION=-1; //@deprecated, please use REVISION_HASH
+    String REVISION_HASH="f0fdd52973d373ffd9c86b81d99842dc2c7f660e";
+    String BUILD_DATE="12/01/2020 03:09 GMT";
+}
+5.切换到zookeeper源码根目录（带有build.xml的目录），执行ant eclipse，需要6-10分钟结束。
+6.执行完ant eclipse会生成下载源码时不存在包如data、proto、txn等，具体的生成路径，通过搜索文件名称获取。
+一定要注意切换源码分支，一定要发生在ant eclipse之前！！！
