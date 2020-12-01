@@ -15,4 +15,15 @@ public interface Info {
 }
 5.切换到zookeeper源码根目录（带有build.xml的目录），执行ant eclipse，需要6-10分钟结束。
 6.执行完ant eclipse会生成下载源码时不存在包如data、proto、txn等，具体的生成路径，通过搜索文件名称获取。
+7.在server项目中修改如下两个依赖
+   <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-server</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-servlet</artifactId>
+      <scope>compile</scope>
+    </dependency>
 一定要注意切换源码分支，一定要发生在ant eclipse之前！！！
